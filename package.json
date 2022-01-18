@@ -1,6 +1,6 @@
 {
-  "name": "obj-mapping",
-  "version": "0.1.0",
+  "name": "ompjs",
+  "version": "0.1.1",
   "description": "object mapping",
   "main": "./lib/index.js",
   "license": "MIT",
@@ -12,9 +12,9 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/cyyjs/ompjs.git"
   },
-  "homepage": "",
+  "homepage": "https://github.com/cyyjs/ompjs.git",
   "types": "./lib/index.d.ts",
   "files": [
     "lib"

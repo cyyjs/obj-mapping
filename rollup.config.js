@@ -34,6 +34,6 @@ export default {
     output: {
       format: 'cjs',
       file: `lib/index.js`,
-    }
-    // external: ['lodash']
+    },
+    external: ['lodash']
 }

@@ -3,7 +3,7 @@
  * @Date: 2022-01-14 16:02:34
  * @LastEditors: cyy
  * @LastEditTime: 2022-01-18 12:02:49
- * @Description: 
+ * @Description:
  */
 import { get as _get, merge } from 'lodash'
 import * as pipeline from './pipeline'
@@ -13,11 +13,11 @@ type Pipeline = Record<string, Function>
 
 class Mapping {
   pipeline: Pipeline
-  constructor(pipeline: Pipeline = {}) {
+  constructor (pipeline: Pipeline = {}) {
     this.pipeline = pipeline || {}
   }
 
-  use(pipeline: Pipeline) {
+  use (pipeline: Pipeline) {
     this.pipeline = merge(this.pipeline, pipeline)
   }
 
@@ -26,7 +26,7 @@ class Mapping {
  * @param {Object} item 要mapping的数据对象
  * @param {Object} mapping 数据映射
  */
-  mappingItem(data: Obj = {}, mapping: Obj = {}) {
+  mappingItem (data: Obj = {}, mapping: Obj = {}) {
     const newItem: Obj = {}
     Object.keys(mapping).forEach(key => {
       const value = mapping[key]
@@ -54,7 +54,7 @@ class Mapping {
    * @param {Array|Object} data 原始数据
    * @param {Object} mapping 数据映射关系
    */
-  mapping(data: Obj | Obj[] = [], mapping: Obj = {}) {
+  mapping (data: Obj | Obj[] = [], mapping: Obj = {}) {
     if (Array.isArray(data)) {
       return data.map(item => this.mappingItem(item, mapping))
     } else {

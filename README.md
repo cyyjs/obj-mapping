@@ -1,16 +1,16 @@
-## ObjMapping
+## ompjs
 
 Object data mapping tool library.
 ## Install
 
 ```bash
-yarn add obj-mapping
+yarn add ompjs
 ```
 
 ## Usage
 
 ```js
-import Mapping from 'obj-mapping'
+import Mapping from 'ompjs'
 
 const source = {
   a: '1',
@@ -39,7 +39,7 @@ const result = Mapping.mapping(obj, mapping)
 ### Custom Pipeline
 
 ```js
-import Mapping from 'obj-mapping'
+import Mapping from 'ompjs'
 
 Mapping.use({
   camel: (v:string)=> {
@@ -64,7 +64,7 @@ const result = Mapping.mapping(obj, mapping)
 ### Multiple Pipeline
 
 ```js
-import Mapping from 'obj-mapping'
+import Mapping from 'ompjs'
 
 Mapping.use({
   month: (v:Date)=> {
