@@ -1,24 +1,24 @@
 ## ompjs
 
-Object data mapping tool library.
-[中文文档](./zh.md)
-## Install
+`Json`数据字段映射转换工具库，支持自定义`管道`操作。
+
+## 安装
 
 ```bash
 yarn add ompjs
 ```
 
-## Usage
+## 使用
 
 ```js
 import { mapping as mappingFn, usePipeline} from 'ompjs'
 
-const source = {
+const source = [{
   a: '1',
   b: 4,
   c: '2',
   d: '2022/01/18'
-}
+}]
 
 const mapping = {
   e: 'a|number',
@@ -29,20 +29,21 @@ const mapping = {
 
 const result = mappingFn(obj, mapping)
 
-// {
+// [{
 //   e: 1,
 //   f: '4',
 //   g: true,
 //   h: '2022-01-17T16:00:00.000Z'
-// }
+// }]
 ```
 
-### Custom Pipeline
+### 自定义管道函数
 
 ```js
 import { mapping as mappingFn, usePipeline} from 'ompjs'
 
 usePipeline({
+  // 转驼峰
   camel: (v:string)=> {
     return v.replace(/\_(\w)/g, (all, letter) => {
       return letter.toUpperCase()
@@ -62,7 +63,7 @@ const result = mappingFn(obj, mapping)
 // }
 ```
 
-### Multiple Pipeline
+### 使用多个管道函数
 
 ```js
 import { mapping as mappingFn, usePipeline} from 'ompjs'
